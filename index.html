@@ -3,7 +3,7 @@
 <head>
 <script>
 (function(){
-  var dominiosPermitidos = ["SEU-DOMINIO-AQUI.vercel.app", "localhost", "127.0.0.1"];
+  var dominiosPermitidos = ["arsenaldomestre.vercel.app", "localhost", "127.0.0.1"];
   var hostAtual = window.location.hostname;
   var permitido = dominiosPermitidos.some(function(d){
     return hostAtual === d || hostAtual.endsWith("." + d);
