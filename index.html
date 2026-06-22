@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script>
+(function(){
+  var dominiosPermitidos = ["SEU-DOMINIO-AQUI.vercel.app", "localhost", "127.0.0.1"];
+  var hostAtual = window.location.hostname;
+  var permitido = dominiosPermitidos.some(function(d){
+    return hostAtual === d || hostAtual.endsWith("." + d);
+  });
+  if (!permitido) {
+    window.location.replace("LINK-DE-CHECKOUT-AQUI");
+  }
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Arsenal de Dinâmicas de Capoeira | Acesso Imediato</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+<script>
+  window.pixelId = "SEU-PIXEL-UTMIFY-AQUI";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #f9f6f2;
+  color: #1a1a1a;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* ── TOP BAR ── */
+.topbar {
+  background: linear-gradient(135deg, #1a1a2e, #2b3a67);
+  color: #fff;
+  text-align: center;
+  padding: 12px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.topbar svg { width: 16px; height: 16px; stroke: #FF6B00; flex-shrink: 0; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; animation: flamePulse 1.8s ease-in-out infinite; filter: drop-shadow(0 0 3px #FF6B00); }
+@keyframes flamePulse {
+  0%,100% { filter: drop-shadow(0 0 2px #FF6B00) drop-shadow(0 0 4px #FF6B00); transform: scale(1); }
+  50%      { filter: drop-shadow(0 0 6px #FF6B00) drop-shadow(0 0 12px #ffaa44); transform: scale(1.18); }
+}
+
+/* ── HERO (branco) ── */
+.hero {
+  background:
+    linear-gradient(160deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.20) 100%),
+    url('img/heroimg.webp') center center / cover no-repeat;
+  text-align: center;
+  padding: 36px 22px 32px;
+  border-bottom: none;
+}
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 34px; font-weight: 900;
+  line-height: 1.22; margin-bottom: 14px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+.hero h1 span { color: #FF6B00; }
+.hero .sub {
+  font-size: 16px; color: #f0f0f0;
+  line-height: 1.7; margin-bottom: 24px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.hero-mockup { margin: 0 auto 24px; display: flex; justify-content: center; }
+.hero-mockup img {
+  width: 100%; max-width: 360px;
+  border-radius: 18px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.4);
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+.hero-bullets {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 8px; margin-bottom: 24px;
+}
+.hb-pill {
+  display: flex; align-items: center; gap: 6px;
+  background: #fff8f0; border: 1.5px solid #ffd9b0;
+  border-radius: 50px; padding: 7px 14px;
+  font-size: 13px; font-weight: 700; color: #333;
+}
+.hb-pill svg { width: 14px; height: 14px; stroke: #FF6B00; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── BOTÕES ── */
+.btn-cta {
+  display: block;
+  background: linear-gradient(135deg, #16803a, #22c55e);
+  color: #fff; font-family: 'Montserrat', sans-serif;
+  font-size: 18px; font-weight: 800;
+  padding: 20px 24px; border-radius: 50px;
+  text-decoration: none; border: none; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(22,128,58,0.35);
+  transition: transform .15s, box-shadow .15s;
+  text-align: center; letter-spacing: 0.3px;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(22,128,58,0.48); }
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 6px 20px rgba(22,128,58,0.35); transform: scale(1); }
+  50%      { box-shadow: 0 8px 32px rgba(22,128,58,0.55), 0 0 20px rgba(22,128,58,0.25); transform: scale(1.02); }
+}
+
+/* ── SEÇÕES ── */
+.sec       { padding: 48px 20px; }
+.bg-white  { background: #ffffff; }
+.bg-cream  { background: #fdf8f3; }
+.bg-iceberg { background: #f0f4ff; }
+.bg-light  { background: #f4f1ee; }
+.bg-mint   { background: #f0fdf5; }
+.bg-lavender { background: #f4f3ff; }
+
+.sec-title {
+  font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 900;
+  text-align: center; margin-bottom: 28px; color: #111; line-height: 1.25;
+}
+.sec-title span { color: #FF6B00; }
+.divider { height: 3px; background: linear-gradient(90deg,#FFD600,#FF6B00,#FFD600); }
+
+/* ── ÍCONE WRAP ── */
+.icon-wrap {
+  width: 52px; height: 52px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.icon-wrap svg { width: 26px; height: 26px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.iw-orange { background: #FFF0E0; } .iw-orange svg { stroke: #FF6B00; }
+.iw-green  { background: #E8F8EE; } .iw-green svg  { stroke: #16803a; }
+.iw-navy   { background: #EAEDF5; } .iw-navy svg   { stroke: #2b3a67; }
+.iw-violet { background: #F0EDFF; } .iw-violet svg { stroke: #6d28d9; }
+
+/* ── CARROSSEL ── */
+.car-wrap {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 0 28px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+.car-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  will-change: transform;
+}
+.car-track img {
+  height: 340px;
+  width: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  flex-shrink: 0;
+  pointer-events: none;
+  user-select: none;
+}
+@media (max-width: 480px) {
+  .car-track img { height: 300px; }
+}
+
+/* ── O QUE VAI RECEBER ── */
+.recv-grid { display: flex; flex-direction: column; gap: 12px; }
+.recv-item {
+  display: flex; align-items: center; gap: 16px;
+  background: #fff; border: 1.5px solid #f0e8e0;
+  border-radius: 16px; padding: 18px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.recv-item h3 { font-size: 16px; font-weight: 900; color: #111; margin-bottom: 3px; }
+.recv-item p  { font-size: 13.5px; font-weight: 600; color: #555; line-height: 1.4; }
+
+/* ── COMO FUNCIONA ── */
+.how-steps { display: flex; flex-direction: column; gap: 14px; }
+.how-step {
+  display: flex; align-items: center; gap: 14px;
+  background: #fff; border: 1.5px solid #e6e8f0;
+  border-radius: 14px; padding: 16px 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.step-num {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #2b3a67; color: #fff;
+  font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.step-ico {
+  width: 42px; height: 42px; border-radius: 11px; background: #EAEDF5;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.step-ico svg { width: 22px; height: 22px; stroke: #2b3a67; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.how-step h4 { font-size: 15px; font-weight: 800; color: #111; }
+
+/* ── BÔNUS ── */
+.bonus-header {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-bottom: 6px;
+}
+.bonus-header .icon-wrap { width: 44px; height: 44px; }
+.bonus-header .icon-wrap svg { width: 22px; height: 22px; }
+.bonus-title {
+  font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900; color: #111;
+}
+.bonus-sub {
+  text-align: center; font-size: 14.5px; color: #555; font-weight: 600;
+  margin-bottom: 22px;
+}
+.bonus-card {
+  display: flex; flex-direction: column;
+  background: #fff4e6; border: 1.5px solid #FF6B00;
+  border-radius: 16px; padding: 16px; margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  animation: bonusGlow 2s ease-in-out infinite;
+}
+@keyframes bonusGlow {
+  0%,100% { box-shadow: 0 0 6px rgba(255,107,0,0.3), 0 0 12px rgba(255,107,0,0.15); border-color: #FF6B00; }
+  50%      { box-shadow: 0 0 14px rgba(255,107,0,0.65), 0 0 28px rgba(255,107,0,0.3); border-color: #ffaa44; }
+}
+.bonus-card img {
+  width: 100%; max-width: 200px; aspect-ratio: 1 / 1; border-radius: 12px; object-fit: cover;
+  margin: 0 auto 14px; display: block; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.bonus-card-body { flex: 1; }
+.bonus-card h3 { font-size: 15.5px; font-weight: 900; color: #111; margin-bottom: 4px; }
+.bonus-card p { font-size: 13px; color: #555; font-weight: 600; line-height: 1.45; margin-bottom: 8px; }
+.bonus-price-row { display: flex; align-items: center; gap: 8px; }
+.bonus-old { font-size: 13px; color: #999; text-decoration: line-through; font-weight: 700; }
+.bonus-arrow { font-size: 13px; color: #aaa; }
+.bonus-free {
+  font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 900; color: #16803a;
+  background: #E8F8EE; padding: 2px 10px; border-radius: 50px;
+}
+
+/* ── CERTIFICADO ── */
+.cert-box {
+  background: linear-gradient(165deg, #1a1a2e 0%, #2b3a67 100%);
+  border-radius: 22px; padding: 34px 24px;
+  position: relative; overflow: hidden;
+  text-align: center;
+  border: 1.5px solid rgba(255,107,0,0.3);
+}
+.cert-box::before {
+  content: '';
+  position: absolute; top: -60px; right: -60px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,107,0,0.25), transparent 70%);
+}
+.cert-box::after {
+  content: '';
+  position: absolute; bottom: -50px; left: -50px;
+  width: 150px; height: 150px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(34,197,94,0.18), transparent 70%);
+}
+.cert-seal {
+  position: relative; z-index: 1;
+  width: 76px; height: 76px; margin: 0 auto 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF6B00, #e05500);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(255,107,0,0.4);
+}
+.cert-seal svg { width: 38px; height: 38px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.cert-box h2 {
+  position: relative; z-index: 1;
+  font-family: 'Montserrat', sans-serif; font-size: 21px; font-weight: 900;
+  color: #fff; margin-bottom: 12px; line-height: 1.3;
+}
+.cert-box p {
+  position: relative; z-index: 1;
+  font-size: 14.5px; color: #cdd3e0; line-height: 1.7; max-width: 360px; margin: 0 auto 20px;
+}
+.cert-tag {
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 50px; padding: 8px 16px;
+  font-size: 12.5px; font-weight: 700; color: #fff;
+}
+.cert-tag svg { width: 14px; height: 14px; stroke: #FF6B00; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── PLANO ── */
+.plan-box {
+  background: linear-gradient(165deg, #1a1a2e 0%, #16213e 45%, #0f3460 100%);
+  border-radius: 22px; padding: 26px 22px 32px;
+  border: 2.5px solid #FF6B00;
+  text-align: center; position: relative;
+  box-shadow: 0 8px 32px rgba(255,107,0,0.22), 0 0 60px rgba(255,107,0,0.07);
+}
+.plan-badge {
+  position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg,#FF6B00,#e05500); color: #fff;
+  font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 900;
+  padding: 5px 22px; border-radius: 50px; white-space: nowrap;
+}
+.plan-box h2 { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900; color: #fff; margin: 14px 0 16px; }
+.plan-mockup { position: relative; text-align: center; margin: 0 auto 20px; }
+.plan-mockup::before {
+  content: ''; position: absolute;
+  width: 180px; height: 180px;
+  background: rgba(255,107,0,.18); filter: blur(38px);
+  border-radius: 50%; left: 50%; top: 50%;
+  transform: translate(-50%,-50%); z-index: 0;
+}
+.plan-mockup img { position: relative; z-index: 1; width: 100%; max-width: 260px; border-radius: 14px; filter: drop-shadow(0 12px 28px rgba(0,0,0,.3)); animation: mockupGlow 2.4s ease-in-out infinite; }
+@keyframes mockupGlow {
+  0%,100% { filter: drop-shadow(0 12px 28px rgba(0,0,0,.3)) drop-shadow(0 0 4px rgba(255,214,0,0.2)); }
+  50%      { filter: drop-shadow(0 12px 28px rgba(0,0,0,.3)) drop-shadow(0 0 14px rgba(255,214,0,0.55)) drop-shadow(0 0 6px rgba(255,180,0,0.3)); }
+}
+.plan-old { font-size: 14px; color: #aaa; text-decoration: line-through; margin-bottom: 2px; }
+.plan-price { font-family: 'Montserrat', sans-serif; font-size: 56px; font-weight: 900; color: #FF6B00; line-height: 1; text-shadow: 0 0 20px rgba(255,107,0,.3); }
+.plan-price sup { font-size: 24px; }
+.plan-price span { font-size: 28px; }
+.plan-parcel { font-size: 14px; color: #ccc; margin: 8px 0 20px; }
+.plan-feats { list-style: none; text-align: left; margin-bottom: 24px; }
+.plan-feats li {
+  font-size: 15px; color: #e8e8e8; padding: 10px 0;
+  display: flex; gap: 10px; align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.plan-feats li svg { width: 17px; height: 17px; stroke: #4ade80; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.pay-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+.pay-chip {
+  background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14);
+  color: #ddd; border-radius: 8px; padding: 7px 13px;
+  font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; gap: 6px;
+}
+.pay-chip svg { width: 13px; height: 13px; stroke: #4ade80; fill: none; stroke-width: 2.4; }
+
+.price-banner{
+  margin-top: 16px;
+  width: 100%;
+}
+.price-banner img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+/* ── GARANTIA ── */
+.garantia-box {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid #22c55e; border-radius: 20px; padding: 32px 22px; text-align: center;
+}
+.g-ico {
+  width: 82px; height: 82px; border-radius: 50%;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; box-shadow: 0 4px 14px rgba(22,128,58,0.15);
+}
+.g-ico svg { width: 44px; height: 44px; stroke: #16803a; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.garantia-box h2 { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900; color: #16803a; margin-bottom: 12px; }
+.garantia-box p { font-size: 15px; color: #333; line-height: 1.7; }
+.g-selos { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+.g-selo {
+  background: #fff; border: 1.5px solid #b2e8c8; border-radius: 10px; padding: 8px 14px;
+  font-size: 12px; font-weight: 700; color: #16803a;
+  display: flex; align-items: center; gap: 6px;
+}
+.g-selo svg { width: 14px; height: 14px; stroke: #16803a; fill: none; stroke-width: 2.4; }
+
+/* ── FAQ ── */
+.faq-item { background: #fff; border-radius: 14px; margin-bottom: 10px; overflow: hidden; border: 1.5px solid #ede8e0; }
+.faq-q {
+  padding: 18px 18px; font-size: 15px; font-weight: 700; color: #111;
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  user-select: none; gap: 12px;
+}
+.faq-q svg { width: 16px; height: 16px; stroke: #FF6B00; fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; transition: transform .2s; }
+.faq-item.open .faq-q svg { transform: rotate(180deg); }
+.faq-a { display: none; padding: 0 18px 18px; font-size: 14.5px; color: #444; line-height: 1.7; }
+.faq-item.open .faq-a { display: block; }
+
+/* ── CTA FINAL ── */
+.final-box {
+  background: #fff; border: 1.5px solid #ffd9b0;
+  border-radius: 20px; padding: 30px 22px; text-align: center;
+}
+.final-box h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 900; color: #111; margin-bottom: 12px; line-height: 1.3; }
+.final-box p { font-size: 15px; color: #444; line-height: 1.7; margin-bottom: 22px; }
+
+/* ── FOOTER ── */
+footer { background: #111; color: #aaa; text-align: center; padding: 28px 22px; font-size: 13px; line-height: 1.9; }
+footer a { color: #FF6B00; text-decoration: none; }
+
+/* ── MOBILE ── */
+@media (max-width: 480px) {
+  .sec { padding: 42px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <svg viewBox="0 0 24 24"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
+  Acesso liberado hoje com atualizações semanais inclusas
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 style="font-family:'Montserrat',sans-serif;font-size:34px;font-weight:900;line-height:1.22;margin-bottom:14px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.45);"><span style="color:#fff;text-decoration:underline;text-decoration-color:#FF6B00;text-decoration-thickness:3px;text-underline-offset:4px;">Arsenal</span> de <span style="color:#FF6B00;">Dinâmicas de Capoeira</span></h1>
+
+  <!-- TROCAR media-id pela VSL de capoeira -->
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/SEU-MEDIA-ID-AQUI.js" async type="module"></script>
+  <style>
+  .video-vsl{
+    max-width: 280px;
+    margin: 0 auto 24px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.4);
+  }
+  .video-vsl wistia-player{
+    width:100%;
+    display:block;
+  }
+  wistia-player[media-id='SEU-MEDIA-ID-AQUI']:not(:defined){
+    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/SEU-MEDIA-ID-AQUI/swatch');
+    display:block;
+    filter:blur(5px);
+    padding-top:177.78%;
+  }
+  </style>
+  <div class="video-vsl">
+    <wistia-player media-id="SEU-MEDIA-ID-AQUI" aspect="0.5625"></wistia-player>
+  </div>
+
+  <p class="sub" style="text-align:center;">
+    Um arsenal organizado de dinâmicas e práticas pedagógicas para aulas de capoeira, desenvolvido para professores que buscam <strong style="color:#FFB066;font-weight:900;">mais estrutura, fluidez e engajamento</strong> em suas aulas.
+  </p>
+
+  <div class="hero-bullets">
+    <div class="hb-pill">
+      <svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+      Acesso imediato após a confirmação
+    </div>
+    <div class="hb-pill">
+      <svg viewBox="0 0 24 24"><path d="m21.5 2-1.4 1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M2 22h11.5"/><path d="M3 13.1a4 4 0 0 1 6.3-4.8l9.1 9.1a4 4 0 0 1-4.8 6.3z"/><path d="m6.5 9.5 1.6-1.6"/></svg>
+      Material pronto para aplicação em aula
+    </div>
+    <div class="hb-pill">
+      <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+      Atualizações semanais inclusas
+    </div>
+    <div class="hb-pill">
+      <svg viewBox="0 0 24 24"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></svg>
+      Acesso vitalício
+    </div>
+  </div>
+
+  <a href="#planos" class="btn-cta">QUERO ACESSAR O ARSENAL</a>
+</section>
+<div class="divider"></div>
+
+<!-- O QUE COMPÕE ESTE ARSENAL -->
+<section class="sec bg-iceberg">
+
+  <h2 class="sec-title">O que compõe <span>este arsenal</span></h2>
+
+  <!-- CARROSSEL -->
+  <div class="car-wrap">
+    <div class="car-track" id="car1">
+      <img src="img/receber1.webp" alt="Dinâmica 1">
+      <img src="img/receber2.webp" alt="Dinâmica 2">
+      <img src="img/receber3.webp" alt="Dinâmica 3">
+      <img src="img/receber4.webp" alt="Dinâmica 4">
+      <img src="img/receber5.webp" alt="Dinâmica 5">
+      <img src="img/receber6.webp" alt="Dinâmica 6">
+    </div>
+  </div>
+
+  <div class="recv-grid">
+
+    <div class="recv-item">
+      <div class="icon-wrap iw-orange">
+        <svg viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+      </div>
+      <div><h3>Dinâmicas Estruturadas de Aula</h3><p>Propostas práticas para desenvolvimento técnico, coordenação, ritmo, atenção e interação entre alunos.</p></div>
+    </div>
+
+    <div class="recv-item">
+      <div class="icon-wrap iw-orange">
+        <svg viewBox="0 0 24 24"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5"/></svg>
+      </div>
+      <div><h3>Ensino Infantil</h3><p>Dinâmicas adaptadas para crianças, com foco em ludicidade, disciplina e desenvolvimento motor.</p></div>
+    </div>
+
+    <div class="recv-item">
+      <div class="icon-wrap iw-orange">
+        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div><h3>Turmas Juvenis e Adultas</h3><p>Estruturas ajustáveis conforme nível técnico e experiência dos praticantes.</p></div>
+    </div>
+
+    <div class="recv-item">
+      <div class="icon-wrap iw-orange">
+        <svg viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+      </div>
+      <div><h3>Aplicação Direta em Aula</h3><p>Material organizado para ser utilizado imediatamente, sem necessidade de planejamento extenso.</p></div>
+    </div>
+
+    <div class="recv-item">
+      <div class="icon-wrap iw-orange">
+        <svg viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+      </div>
+      <div><h3>Acesso Digital</h3><p>Conteúdo acessível pelo celular ou computador, ideal para consulta rápida antes ou durante a aula.</p></div>
+    </div>
+
+    <div class="recv-item">
+      <div class="icon-wrap iw-orange">
+        <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+      </div>
+      <div><h3>Atualizações Semanais</h3><p>O arsenal é constantemente ampliado com novas dinâmicas e variações pedagógicas.</p></div>
+    </div>
+
+    <div class="recv-item">
+      <div class="icon-wrap iw-violet">
+        <svg viewBox="0 0 24 24"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></svg>
+      </div>
+      <div><h3>Acesso Vitalício</h3><p>Você adquire uma vez e utiliza sempre que precisar.</p></div>
+    </div>
+
+    <div class="recv-item">
+      <div class="icon-wrap iw-green">
+        <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <div><h3>Garantia de 7 Dias</h3><p>Acesso completo para avaliação com segurança.</p></div>
+    </div>
+
+  </div>
+
+  <a href="#planos" class="btn-cta" style="margin-top:26px;">SIM, QUERO ACESSAR O ARSENAL</a>
+</section>
+<div class="divider"></div>
+
+<!-- BÔNUS EXCLUSIVOS -->
+<section class="sec bg-cream">
+  <div class="bonus-header">
+    <div class="icon-wrap iw-orange">
+      <svg viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7"/></svg>
+    </div>
+    <div class="bonus-title">Bônus Exclusivos (GRÁTIS)</div>
+  </div>
+  <p class="bonus-sub">Ao adquirir hoje, você também recebe:</p>
+
+  <div class="bonus-card">
+    <img src="img/bonus1.webp" alt="Guia de Engajamento e Controle de Turmas na Capoeira">
+    <div class="bonus-card-body">
+      <h3>Guia de Engajamento e Controle de Turmas na Capoeira</h3>
+      <p>Estratégias práticas para manter a atenção dos alunos, melhorar a disciplina e conduzir aulas mais organizadas e dinâmicas.</p>
+      <div class="bonus-price-row">
+        <span class="bonus-old">De R$37</span>
+        <span class="bonus-arrow">→</span>
+        <span class="bonus-free">GRÁTIS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bonus-card">
+    <img src="img/bonus2.webp" alt="Guia de Progressão Técnica na Capoeira">
+    <div class="bonus-card-body">
+      <h3>Guia de Progressão Técnica na Capoeira</h3>
+      <p>Método simples para evoluir alunos do básico ao jogo, com sequência clara de desenvolvimento técnico dentro das aulas.</p>
+      <div class="bonus-price-row">
+        <span class="bonus-old">De R$37</span>
+        <span class="bonus-arrow">→</span>
+        <span class="bonus-free">GRÁTIS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICADO -->
+<section class="sec bg-white">
+  <div class="cert-box">
+    <div class="cert-seal">
+      <svg viewBox="0 0 24 24"><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/><circle cx="12" cy="8" r="6"/></svg>
+    </div>
+    <h2>Certificado de Participação Incluso</h2>
+    <p>Ao final do acesso, você poderá emitir seu certificado digital de participação no Arsenal de Dinâmicas de Capoeira.</p>
+    <div class="cert-tag">
+      <svg viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m9 15 2 2 4-4"/></svg>
+      Emissão digital, sem custo adicional
+    </div>
+  </div>
+</section>
+
+<!-- GARANTA SEU ACESSO (PLANO) -->
+<section class="sec bg-light" id="planos">
+  <h2 class="sec-title">Garanta Seu <span>Acesso</span></h2>
+
+  <div class="plan-box">
+    <div class="plan-badge">⭐ MAIS PROCURADO</div>
+
+    <h2>Arsenal de Dinâmicas de Capoeira</h2>
+
+    <div class="plan-mockup">
+      <img src="img/mockup-pack.webp" alt="Arsenal de Dinâmicas de Capoeira">
+    </div>
+
+    <div class="plan-old">De R$ 197,00</div>
+    <div class="plan-price"><sup>R$</sup>47<span>,00</span></div>
+    <div class="plan-parcel">Pagamento único</div>
+
+    <ul class="plan-feats">
+      <li><svg viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Material estruturado para aulas de capoeira</li>
+      <li><svg viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Dinâmicas para diferentes níveis e idades</li>
+      <li><svg viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Conteúdo organizado para aplicação pedagógica</li>
+      <li><svg viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Atualizações semanais inclusas</li>
+      <li><svg viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Acesso vitalício</li>
+      <li><svg viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Garantia de 7 dias</li>
+    </ul>
+
+    <a href="LINK-DE-CHECKOUT-AQUI" class="btn-cta">GARANTIR ACESSO AGORA</a>
+
+    <div class="pay-row">
+      <span class="pay-chip"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Compra Segura</span>
+      <span class="pay-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>Pagamento Protegido</span>
+      <span class="pay-chip"><svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Acesso Imediato</span>
+    </div>
+  </div>
+
+  <div class="price-banner">
+    <img src="img/banner.webp" alt="Promoção especial">
+  </div>
+</section>
+
+<!-- COMPRA SEGURA -->
+<section class="sec bg-lavender">
+  <h2 class="sec-title">Compra <span>Segura</span></h2>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="step-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg></div>
+      <h4>Pagamento protegido</h4>
+    </div>
+    <div class="how-step">
+      <div class="step-ico"><svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div>
+      <h4>Acesso liberado automaticamente após confirmação</h4>
+    </div>
+    <div class="how-step">
+      <div class="step-ico"><svg viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/></svg></div>
+      <h4>Conteúdo digital imediato</h4>
+    </div>
+    <div class="how-step">
+      <div class="step-ico"><svg viewBox="0 0 24 24"><path d="M14 14H9.18a2 2 0 0 1-1.86-2.74L9.06 6.5a2 2 0 0 1 1.86-1.5h2.16a2 2 0 0 1 1.86 1.5l1.74 4.76A2 2 0 0 1 14.82 14"/><circle cx="12" cy="3" r="1"/><path d="M3 21h18"/></svg></div>
+      <h4>Sem mensalidades</h4>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="sec bg-mint">
+  <h2 class="sec-title">Garantia de <span>7 Dias</span></h2>
+
+  <div class="garantia-box">
+    <div class="g-ico">
+      <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+    </div>
+    <h2>Avalie com Tranquilidade</h2>
+    <p>Você pode acessar todo o material, aplicar em suas aulas e avaliar com tranquilidade. Se não fizer sentido para sua metodologia, o reembolso é liberado dentro do prazo, sem burocracia.</p>
+    <div class="g-selos">
+      <div class="g-selo"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Compra Segura</div>
+      <div class="g-selo"><svg viewBox="0 0 24 24"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>Pagamento Protegido</div>
+      <div class="g-selo"><svg viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Acesso Imediato</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec bg-white">
+  <h2 class="sec-title">Perguntas <span>Frequentes</span></h2>
+
+  <div class="faq-item">
+    <div class="faq-q"><span>O que é o arsenal?</span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div class="faq-a">Um conjunto organizado de dinâmicas e estruturas pedagógicas para aulas de capoeira.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q"><span>Serve para qualquer nível de aluno?</span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div class="faq-a">Sim, há variações para iniciantes, intermediários e turmas mistas.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q"><span>Preciso ser professor experiente?</span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div class="faq-a">Não. O material foi estruturado para facilitar a aplicação em qualquer nível.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q"><span>Receberei atualizações?</span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div class="faq-a">Sim, novas dinâmicas são adicionadas semanalmente sem custo adicional.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q"><span>O acesso expira?</span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div class="faq-a">Não, o acesso é vitalício.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q"><span>Como recebo o acesso?</span><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div class="faq-a">Imediatamente após a confirmação do pagamento.</div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- CTA FINAL -->
+<section class="sec bg-cream">
+  <div class="final-box">
+    <h2>Comece <span style="color:#FF6B00;">Agora</span></h2>
+    <p>Receba acesso imediato ao Arsenal de Dinâmicas de Capoeira e tenha sempre novas dinâmicas disponíveis para aplicar em suas aulas.</p>
+    <a href="#planos" class="btn-cta">GARANTIR AGORA, SEM RISCO</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Copyright © <span id="ano-footer"></span> Arsenal de Dinâmicas de Capoeira</p>
+  <p style="margin-top:8px"><a href="#">Política de Privacidade</a> &nbsp;|&nbsp; <a href="#">Termos de Uso</a> &nbsp;|&nbsp; <a href="#">Contato</a></p>
+  <p style="margin-top:10px;font-size:12px;color:#777">Produto digital com acesso liberado automaticamente após a confirmação do pagamento.</p>
+</footer>
+
+<script>
+document.getElementById('ano-footer').textContent = new Date().getFullYear();
+
+function setupCarousel(trackEl, speed) {
+  if (!trackEl) return;
+  const items = Array.from(trackEl.children);
+  items.forEach(item => { trackEl.appendChild(item.cloneNode(true)); });
+  let position = 0, paused = false, loopWidth = 0;
+  function calcWidth() { loopWidth = 0; items.forEach(i => { loopWidth += i.offsetWidth + 12; }); }
+  function animate() {
+    if (!paused) { position += speed; if (position >= loopWidth) position = 0; trackEl.style.transform = `translateX(-${position}px)`; }
+    requestAnimationFrame(animate);
+  }
+  const wrap = trackEl.parentElement;
+  if (wrap) {
+    wrap.addEventListener('mouseenter', () => paused = true);
+    wrap.addEventListener('mouseleave', () => paused = false);
+    wrap.addEventListener('touchstart', () => paused = true, { passive: true });
+    wrap.addEventListener('touchend', () => paused = false, { passive: true });
+  }
+  window.addEventListener('resize', calcWidth);
+  calcWidth(); animate();
+}
+setupCarousel(document.getElementById('car1'), 0.6);
+
+document.querySelectorAll('.faq-item').forEach(function(item){
+  item.addEventListener('click', function(){ item.classList.toggle('open'); });
+});
+
+document.querySelectorAll('a[href="#planos"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById('planos').scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+<!-- PROTEÇÃO -->
+<style>
+*{ -webkit-user-select:none; -ms-user-select:none; user-select:none; -webkit-touch-callout:none; }
+img{ pointer-events:none; -webkit-user-drag:none; }
+::selection{ background:transparent; }
+</style>
+<script>
+document.addEventListener('keydown', function(e){
+  if(e.key==='F12') e.preventDefault();
+  if(e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase())) e.preventDefault();
+  if(e.ctrlKey && ['u','s','c','v','a'].includes(e.key.toLowerCase())) e.preventDefault();
+});
+document.addEventListener('copy', e=>e.preventDefault());
+document.addEventListener('paste', e=>e.preventDefault());
+document.addEventListener('cut', e=>e.preventDefault());
+document.addEventListener('contextmenu', e=>e.preventDefault());
+document.addEventListener('dragstart', e=>e.preventDefault());
+(function(){
+  const lim=160;
+  setInterval(()=>{
+    if(window.outerWidth-window.innerWidth>lim||window.outerHeight-window.innerHeight>lim){
+      document.body.innerHTML='<div style="height:100vh;display:flex;align-items:center;justify-content:center;background:#111;color:#fff;font-family:sans-serif;font-size:24px;text-align:center;padding:20px;">Acesso bloqueado</div>';
+    }
+  },500);
+})();
+</script>
+</body>
+</html>
